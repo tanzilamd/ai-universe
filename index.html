@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AI Universe</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Font awesome -->
+        <script
+            src="https://kit.fontawesome.com/b3d4af80b5.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <style>
+            body {
+                font-family: "Work Sans", sans-serif !important;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="text-center space-y-4 my-6">
+            <h1 class="text-4xl font-bold text-center">AI Universe Hub</h1>
+            <button
+                class="btn btn-primary bg-red-500 text-white border-none text-center hover:bg-red-600"
+            >
+                Sort By Date
+            </button>
+        </header>
+
+        <main class="container mx-auto">
+            <!-- Cart container -->
+            <div
+                id="data-container"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            ></div>
+
+            <!-- Show more btn -->
+            <div class="text-center py-8">
+                <button
+                    class="btn btn-primary bg-red-500 text-white border-none text-center hover:bg-red-600"
+                >
+                    Show More
+                </button>
+            </div>
+        </main>
+        <script src="js/ai.js"></script>
+    </body>
+</html>
