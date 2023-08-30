@@ -43,19 +43,28 @@
 
         <main class="container mx-auto">
             <!-- Cart container -->
-            <div
-                id="data-container"
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-            ></div>
+            <section>
+                <div
+                    id="data-container"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                ></div>
 
-            <!-- Show more btn -->
-            <div class="text-center py-8">
-                <button
-                    class="btn btn-primary bg-red-500 text-white border-none text-center hover:bg-red-600"
-                >
-                    Show More
-                </button>
-            </div>
+                <!-- Loading -->
+                <div id="loading" class="text-center hidden">
+                    <progress class="progress w-5/6 py-2 my-32"></progress>
+                </div>
+
+                <!-- Show more btn -->
+                <div class="text-center py-8">
+                    <button
+                        onclick="handleShowAll()"
+                        id="btn-show-all"
+                        class="btn btn-primary bg-red-500 text-white border-none text-center hover:bg-red-600"
+                    >
+                        Show More
+                    </button>
+                </div>
+            </section>
         </main>
         <script src="js/ai.js"></script>
     </body>

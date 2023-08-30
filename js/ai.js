@@ -1,22 +1,37 @@
 // Load Data
-const loadData = async () => {
+const loadData = async (isShowAll) => {
+    loading(true);
     const res = await fetch(
         "https://openapi.programming-hero.com/api/ai/tools"
     );
     const data = await res.json();
 
     const allData = data.data.tools;
-    displayData(allData);
+    displayData(allData, isShowAll);
 };
 
 // Display Data
-const displayData = (arrayData) => {
-    console.log(arrayData);
+const displayData = (arrayData, isShowAll) => {
+    const dataContainer = document.getElementById("data-container");
+
+    dataContainer.textContent = "";
+
+    const showAllBtn = document.getElementById("btn-show-all");
+
+    if (arrayData.length > 6 && !isShowAll) {
+        showAllBtn.classList.remove("hidden");
+    } else {
+        showAllBtn.classList.add("hidden");
+    }
+
+    if (!isShowAll) {
+        arrayData = arrayData.slice(0, 6);
+        console.log(isShowAll);
+    }
 
     arrayData.forEach((data) => {
         console.log(data);
 
-        const dataContainer = document.getElementById("data-container");
         const newCart = document.createElement("div");
 
         newCart.classList = "card card-compact bg-base-100 shadow-xl";
@@ -58,8 +73,24 @@ const displayData = (arrayData) => {
         </div>
     `;
         dataContainer.appendChild(newCart);
-        console.log(newCart.classList);
     });
+
+    loading(false);
+};
+
+const handleShowAll = () => {
+    loadData(true);
+    loading(true);
+};
+
+const loading = (isLoading) => {
+    const loadingProcess = document.getElementById("loading");
+
+    if (isLoading) {
+        loadingProcess.classList.remove("hidden");
+    } else {
+        loadingProcess.classList.add("hidden");
+    }
 };
 
 loadData();
